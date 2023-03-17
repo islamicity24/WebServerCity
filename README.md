@@ -3,11 +3,11 @@
 Untuk membangun dan mengonfigurasi webserver code dengan NGINX sebagai proxy server serta menerapkan limit access, langkah-langkah yang dapat dilakukan adalah sebagai berikut:
 
 1. Install NGINX
-Jalankan perintah sudo apt update untuk melakukan update sistem
-Setelah itu, jalankan perintah sudo apt install nginx untuk menginstal NGINX
-Verifikasi status NGINX dengan menjalankan perintah systemctl status nginx
+Jalankan perintah `sudo apt update` untuk melakukan update sistem
+Setelah itu, jalankan perintah `sudo apt install nginx` untuk menginstal NGINX
+Verifikasi status NGINX dengan menjalankan perintah `systemctl status nginx`
 2. Konfigurasi NGINX sebagai Proxy Server
-Buka file konfigurasi NGINX dengan perintah sudo nano /etc/nginx/sites-available/default
+Buka file konfigurasi NGINX dengan perintah `sudo nano /etc/nginx/sites-available/default`
 
 Hapus konfigurasi default dan gantikan dengan konfigurasi berikut ini:
 
@@ -33,7 +33,7 @@ server {
 Konfigurasi di atas akan mengarahkan permintaan HTTP ke port 3000 pada localhost.
 
 3. Menerapkan Limit Access di NGINX
-Buka file konfigurasi NGINX dengan perintah sudo nano /etc/nginx/sites-available/default
+Buka file konfigurasi NGINX dengan perintah `sudo nano /etc/nginx/sites-available/default`
 
 Tambahkan konfigurasi berikut ini pada blok server:
 
@@ -47,7 +47,7 @@ location /admin {
 Konfigurasi di atas akan membatasi akses ke direktori /admin hanya pada jaringan 192.168.0.0/16.
 
 4. Restart NGINX
-Setelah melakukan perubahan konfigurasi, restart NGINX dengan menjalankan perintah sudo systemctl restart nginx
+Setelah melakukan perubahan konfigurasi, restart NGINX dengan menjalankan perintah `sudo systemctl restart nginx`
 Setelah langkah-langkah di atas dilakukan, NGINX sudah diatur sebagai proxy server dan limit access telah diterapkan untuk direktori /admin pada jaringan 192.168.0.0/16.
 
 
